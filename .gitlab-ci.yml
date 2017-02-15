@@ -1,0 +1,30 @@
+buildProject:
+  script:
+    - gradle clean build
+  stage: build
+  tags:
+    - 'java8'
+    - 'gradle'
+
+autoversion:
+  script:
+    - sh autoversion.sh
+  only:
+    - master
+  stage: build
+  tags:
+    - 'java8'
+    - 'gradle'
+    - 'sshpush'
+
+publishArtifacts:
+  script:
+    - gradle publish
+  stage: deploy
+  tags:
+    - 'java8'
+    - 'gradle'
+    - 'artifactPublisher'
+  only:
+    - tags
+
