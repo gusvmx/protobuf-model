@@ -54,6 +54,20 @@ public final class MyModelProtos {
      */
     com.google.protobuf.ByteString
         getEmailBytes();
+
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    boolean hasLastName();
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    java.lang.String getLastName();
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getLastNameBytes();
   }
   /**
    * Protobuf type {@code com.gusvmx.protobuf.model.Person}
@@ -70,6 +84,7 @@ public final class MyModelProtos {
       name_ = "";
       id_ = 0;
       email_ = "";
+      lastName_ = "";
     }
 
     @java.lang.Override
@@ -115,6 +130,12 @@ public final class MyModelProtos {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               email_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              lastName_ = bs;
               break;
             }
           }
@@ -241,6 +262,48 @@ public final class MyModelProtos {
       }
     }
 
+    public static final int LASTNAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object lastName_;
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    public boolean hasLastName() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    public java.lang.String getLastName() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          lastName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string lastName = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLastNameBytes() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -270,6 +333,9 @@ public final class MyModelProtos {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -287,6 +353,9 @@ public final class MyModelProtos {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -320,6 +389,11 @@ public final class MyModelProtos {
         result = result && getEmail()
             .equals(other.getEmail());
       }
+      result = result && (hasLastName() == other.hasLastName());
+      if (hasLastName()) {
+        result = result && getLastName()
+            .equals(other.getLastName());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -342,6 +416,10 @@ public final class MyModelProtos {
       if (hasEmail()) {
         hash = (37 * hash) + EMAIL_FIELD_NUMBER;
         hash = (53 * hash) + getEmail().hashCode();
+      }
+      if (hasLastName()) {
+        hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getLastName().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -467,6 +545,8 @@ public final class MyModelProtos {
         bitField0_ = (bitField0_ & ~0x00000002);
         email_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        lastName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -503,6 +583,10 @@ public final class MyModelProtos {
           to_bitField0_ |= 0x00000004;
         }
         result.email_ = email_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.lastName_ = lastName_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -556,6 +640,11 @@ public final class MyModelProtos {
         if (other.hasEmail()) {
           bitField0_ |= 0x00000004;
           email_ = other.email_;
+          onChanged();
+        }
+        if (other.hasLastName()) {
+          bitField0_ |= 0x00000008;
+          lastName_ = other.lastName_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -775,6 +864,82 @@ public final class MyModelProtos {
         onChanged();
         return this;
       }
+
+      private java.lang.Object lastName_ = "";
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public boolean hasLastName() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public java.lang.String getLastName() {
+        java.lang.Object ref = lastName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            lastName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLastNameBytes() {
+        java.lang.Object ref = lastName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public Builder setLastName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public Builder clearLastName() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        lastName_ = getDefaultInstance().getLastName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string lastName = 4;</code>
+       */
+      public Builder setLastNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -839,9 +1004,9 @@ public final class MyModelProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\013model.proto\022\031com.gusvmx.protobuf.model" +
-      "\"1\n\006Person\022\014\n\004name\030\001 \002(\t\022\n\n\002id\030\002 \002(\005\022\r\n\005" +
-      "email\030\003 \001(\tB\'\n\026com.gus.protobuf.modelB\rM" +
-      "yModelProtos"
+      "\"C\n\006Person\022\014\n\004name\030\001 \002(\t\022\n\n\002id\030\002 \002(\005\022\r\n\005" +
+      "email\030\003 \001(\t\022\020\n\010lastName\030\004 \001(\tB\'\n\026com.gus" +
+      ".protobuf.modelB\rMyModelProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -860,7 +1025,7 @@ public final class MyModelProtos {
     internal_static_com_gusvmx_protobuf_model_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_gusvmx_protobuf_model_Person_descriptor,
-        new java.lang.String[] { "Name", "Id", "Email", });
+        new java.lang.String[] { "Name", "Id", "Email", "LastName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
